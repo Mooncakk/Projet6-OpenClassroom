@@ -9,3 +9,145 @@
     padding-left: 3%;
     font-weight: bold;
 }
+
+.meilleur_film {
+    display: flex;
+    height: 400px;
+    border: 3px solid black;
+    margin: 5px;
+
+}
+
+
+section.films_les_mieux_notes h2 {
+    margin:10px 10px 10px 50%;
+}
+
+.films_les_mieux_notes #conteneur {
+    display: flex;
+    border: solid 1px black;
+    height: 180px;
+    margin-left: 20px;
+    align-items:center;
+    justify-content: flex-start;
+
+}
+.films_les_mieux_notes #conteneur #box {
+    
+    background-color: grey;
+    border: solid 1px black;
+    min-width: 200px;
+    margin-left: 3px;
+    height: 150px;
+
+}
+
+.films_les_mieux_notes #conteneur #box:nth-child(1) {
+    margin-left: 0px;
+}
+
+.films_les_mieux_notes #conteneur #box:hover {
+    height: 180px;
+    min-width: 270px;
+
+
+}
+
+
+section.cat1 h3 {
+    margin:10px 10px 10px 50%;
+}
+
+.cat1 #conteneur {
+    display: flex;
+    border: solid 1px black;
+    height: 180px;
+    margin-left: 20px;
+    align-items:center;
+    justify-content: flex-start;
+
+}
+.cat1 #conteneur #box {
+    
+    background-color: grey;
+    border: solid 1px black;
+    min-width: 200px;
+    margin-left: 3px;
+    height: 150px;
+
+}
+
+.cat1 #conteneur #box:nth-child(1) {
+    margin-left: 0px;
+}
+
+.cat1 #conteneur #box:hover {
+    height: 180px;
+    min-width: 270px;
+
+
+}section.cat2 h3 {
+    margin:10px 10px 10px 50%;
+}
+
+.cat2 #conteneur {
+    display: flex;
+    border: solid 1px black;
+    height: 180px;
+    margin-left: 20px;
+    align-items:center;
+    justify-content: flex-start;
+
+}
+.cat2 #conteneur #box {
+    
+    background-color: grey;
+    border: solid 1px black;
+    min-width: 200px;
+    margin-left: 3px;
+    height: 150px;
+
+}
+
+.cat2 #conteneur #box:nth-child(1) {
+    margin-left: 0px;
+}
+
+.cat2 #conteneur #box:hover {
+    height: 180px;
+    min-width: 270px;
+
+
+}section.cat3 h3 {
+    margin:10px 10px 10px 50%;
+}
+
+.cat3 #conteneur {
+    display: flex;
+    border: solid 1px black;
+    height: 180px;
+    margin-left: 20px;
+    align-items:center;
+    justify-content: flex-start;
+
+}
+.cat3 #conteneur #box {
+    
+    background-color: grey;
+    border: solid 1px black;
+    min-width: 200px;
+    margin-left: 3px;
+    height: 150px;
+
+}
+
+.cat3 #conteneur #box:nth-child(1) {
+    margin-left: 0px;
+}
+
+.cat3 #conteneur #box:hover {
+    height: 180px;
+    min-width: 270px;
+
+
+}
