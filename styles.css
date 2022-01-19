@@ -34,17 +34,20 @@ span#titre_du_site{
 
 
 section.films_les_mieux_notes h2 {
-    margin:10px 10px 10px 50%;
+    text-align: center;
+    margin:10px 0 10px 0;
 }
 
 .films_les_mieux_notes #conteneur {
     display: flex;
     border: solid 1px black;
+    background-color: black;
+    width: 54em;
     height: 180px;
-    margin-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
     align-items:center;
-    justify-content: flex-start;
-    overflow: auto;
+    overflow: auto;   
 
 }
 .films_les_mieux_notes #conteneur #box {
@@ -71,18 +74,20 @@ section.films_les_mieux_notes h2 {
 
 
 section.cat1 h3 {
-    margin:10px 10px 10px 50%;
+    text-align: center;
+    margin:10px 0 10px 0;
 }
 
 .cat1 #conteneur {
     display: flex;
     border: solid 1px black;
+    background-color: black;
+    width: 54em;
     height: 180px;
-    margin-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
     align-items:center;
-    justify-content: flex-start;
-    overflow: auto;
-
+    overflow: auto;    
 }
 .cat1 #conteneur #box {
     
@@ -104,17 +109,20 @@ section.cat1 h3 {
 
 
 }section.cat2 h3 {
-    margin:10px 10px 10px 50%;
+    text-align: center;
+    margin:10px 0 10px 0;
 }
 
 .cat2 #conteneur {
     display: flex;
     border: solid 1px black;
+    background-color: black;
+    width: 54em;
     height: 180px;
-    margin-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
     align-items:center;
-    justify-content: flex-start;
-    overflow: auto;
+    overflow: auto;   
 
 }
 .cat2 #conteneur #box {
@@ -137,17 +145,20 @@ section.cat1 h3 {
 
 
 }section.cat3 h3 {
-    margin:10px 10px 10px 50%;
+    text-align: center;
+    margin:10px 0 10px 0;
 }
 
 .cat3 #conteneur {
     display: flex;
     border: solid 1px black;
+    background-color: black;
+    width: 54em;
     height: 180px;
-    margin-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
     align-items:center;
-    justify-content: flex-start;
-    overflow: auto;
+    overflow: auto;   
 
 }
 .cat3 #conteneur #box {
