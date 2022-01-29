@@ -78,13 +78,13 @@ section.films_les_mieux_notes h2 {
 }
 
 
-section.cat1 h3 {
+section.thriller h2 {
     text-align: center;
     margin:10px 0 10px 0;
     color: ivory;
 }
 
-.cat1 #conteneur {
+.thriller #conteneur {
     display: flex;
     background-color: black;
     width: 54em;
@@ -94,7 +94,7 @@ section.cat1 h3 {
     align-items:center;
     overflow: auto;    
 }
-.cat1 #conteneur #box {
+.thriller #conteneur #box {
     
     background-color: grey;
     border: solid 1px black;
@@ -104,22 +104,22 @@ section.cat1 h3 {
 
 }
 
-.cat1 #conteneur #box:nth-child(1) {
+.thriller #conteneur #box:nth-child(1) {
     margin-left: 0px;
 }
 
-.cat1 #conteneur #box:hover {
+.thriller #conteneur #box:hover {
     height: 180px;
     min-width: 270px;
 
 
-}section.cat2 h3 {
+}section.fantasy h2 {
     text-align: center;
     margin:10px 0 10px 0;
     color: ivory;
 }
 
-.cat2 #conteneur {
+.fantasy #conteneur {
     display: flex;
     background-color: black;
     width: 54em;
@@ -130,7 +130,7 @@ section.cat1 h3 {
     overflow: auto;   
 
 }
-.cat2 #conteneur #box {
+.fantasy #conteneur #box {
     
     background-color: grey;
     border: solid 1px black;
@@ -140,22 +140,22 @@ section.cat1 h3 {
 
 }
 
-.cat2 #conteneur #box:nth-child(1) {
+.fantasy #conteneur #box:nth-child(1) {
     margin-left: 0px;
 }
 
-.cat2 #conteneur #box:hover {
+.fantasy #conteneur #box:hover {
     height: 180px;
     min-width: 270px;
 
 
-}section.cat3 h3 {
+}section.drama h2 {
     text-align: center;
     margin:10px 0 10px 0;
     color: ivory;
 }
 
-.cat3 #conteneur {
+.drama #conteneur {
     display: flex;
     background-color: black;
     width: 54em;
@@ -166,7 +166,7 @@ section.cat1 h3 {
     overflow: auto;   
 
 }
-.cat3 #conteneur #box {
+.drama #conteneur #box {
     
     background-color: grey;
     border: solid 1px black;
@@ -176,11 +176,11 @@ section.cat1 h3 {
 
 }
 
-.cat3 #conteneur #box:nth-child(1) {
+.drama #conteneur #box:nth-child(1) {
     margin-left: 0px;
 }
 
-.cat3 #conteneur #box:hover {
+.drama #conteneur #box:hover {
     height: 180px;
     min-width: 270px;
 
