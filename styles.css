@@ -42,12 +42,14 @@ span#titre_du_site{
     height: 400px;
 }
 
-#previous, #next {
+.btn-nav-left, .btn-nav-right {
     background-color: rgba(24, 24, 24, 0.476);
-    height: 300px;
+    height: 260px;
     width: 40px;
+    cursor: pointer;
     border: 1px solid red;
 }
+
 
 #category-title {
     text-align: center;
@@ -71,10 +73,15 @@ span#titre_du_site{
     border: solid 1px black;
     margin-left: 3px;
     height: 260px;
+    display: none;
 }
 
-#conteneur #box:nth-child(1) {
-    margin-left: 0px;
+#box .active{
+    display: block;
+}
+
+#movie-cover:nth-child(1) {
+    margin-left: 5px;
 }
 
 

@@ -47,7 +47,25 @@ getCatImg(uriFantasyCat, uriFantasyCat2, fantasyCat)
 getCatImg(uriDramaCat, uriDramaCat2, dramaCat)
 
 
+const nbMovieCover = 7;
+const previous = dcocument.querySelectorAll(".btn-nav-left");
+const next = dcocument.querySelectorAll(".btn-nav-right");
+let count = 0;
 
+const nextMovieCover = function(items){
+    items[count].classList.remove('active');
+
+    if(count < nbMovieCover){
+        count++;
+    }else {
+        count = 0;
+    }
+    
+    items[count].classList.add('active');
+}
+
+previous.addEventListener('click', console.log('jolie click'))
+next.addEventListener('click', console.log('jolie click'))
 
 
 
