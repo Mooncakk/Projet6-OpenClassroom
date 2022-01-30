@@ -6,7 +6,7 @@ nav {
     position: fixed;
     top: 0px;
     left: 25px;
-    z-index: 2;
+    z-index: 1;
     height: 30px;
     align-items: flex-end;
 }
@@ -28,161 +28,58 @@ span#titre_du_site{
     font-size: 18pt;
 }
 
-
-.meilleur_film {
+.best-movie {
+    margin-top: 20px;
     display: flex;
     height: 400px;
-    border: 3px solid rgb(62, 21, 70);
-    z-index: 1;
     color: ivory;
     align-items: center;
     justify-content: center;
 
 }
 
+#best-movie-cover{
+    height: 400px;
+}
 
-section.films_les_mieux_notes h2 {
+#previous, #next {
+    background-color: rgba(24, 24, 24, 0.476);
+    height: 300px;
+    width: 40px;
+    border: 1px solid red;
+}
+
+#category-title {
     text-align: center;
     margin:10px 0 10px 0;
     color: ivory;
 }
 
-.films_les_mieux_notes #conteneur {
+#conteneur {
     display: flex;
     background-color: black;
     width: 54em;
-    height: 180px;
+    height: 300px;
     margin-left: auto;
     margin-right: auto;
     align-items:center;
-    overflow: auto;   
-
+    overflow: hidden;
 }
-.films_les_mieux_notes #conteneur #box {
-    
+
+#movie-cover {  
     background-color: grey;
     border: solid 1px black;
-    min-width: 200px;
     margin-left: 3px;
-    height: 150px;
-
+    height: 260px;
 }
 
-.films_les_mieux_notes #conteneur #box:nth-child(1) {
+#conteneur #box:nth-child(1) {
     margin-left: 0px;
 }
 
-.films_les_mieux_notes #conteneur #box:hover {
-    height: 180px;
-    min-width: 270px;
-}
 
-
-section.thriller h2 {
-    text-align: center;
-    margin:10px 0 10px 0;
-    color: ivory;
-}
-
-.thriller #conteneur {
-    display: flex;
+#movie-cover:hover{
     background-color: black;
-    width: 54em;
-    height: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    align-items:center;
-    overflow: auto;    
-}
-.thriller #conteneur #box {
-    
-    background-color: grey;
-    border: solid 1px black;
-    min-width: 200px;
-    margin-left: 3px;
-    height: 150px;
-
-}
-
-.thriller #conteneur #box:nth-child(1) {
-    margin-left: 0px;
-}
-
-.thriller #conteneur #box:hover {
-    height: 180px;
-    min-width: 270px;
-
-
-}section.fantasy h2 {
-    text-align: center;
-    margin:10px 0 10px 0;
-    color: ivory;
-}
-
-.fantasy #conteneur {
-    display: flex;
-    background-color: black;
-    width: 54em;
-    height: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    align-items:center;
-    overflow: auto;   
-
-}
-.fantasy #conteneur #box {
-    
-    background-color: grey;
-    border: solid 1px black;
-    min-width: 200px;
-    margin-left: 3px;
-    height: 150px;
-
-}
-
-.fantasy #conteneur #box:nth-child(1) {
-    margin-left: 0px;
-}
-
-.fantasy #conteneur #box:hover {
-    height: 180px;
-    min-width: 270px;
-
-
-}section.drama h2 {
-    text-align: center;
-    margin:10px 0 10px 0;
-    color: ivory;
-}
-
-.drama #conteneur {
-    display: flex;
-    background-color: black;
-    width: 54em;
-    height: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    align-items:center;
-    overflow: auto;   
-
-}
-.drama #conteneur #box {
-    
-    background-color: grey;
-    border: solid 1px black;
-    min-width: 200px;
-    margin-left: 3px;
-    height: 150px;
-
-}
-
-.drama #conteneur #box:nth-child(1) {
-    margin-left: 0px;
-}
-
-.drama #conteneur #box:hover {
-    height: 180px;
-    min-width: 270px;
-
-
+    height: 100%;
+    width: 220px;
 }

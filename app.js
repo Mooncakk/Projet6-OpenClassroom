@@ -10,11 +10,11 @@ const uriDramaCat = "?genre=drama"
 const uriDramaCat2 = "?genre=drama&page=2"
 
 
-let bestFilm = document.querySelector('#best_film');
-let bestFilms = document.querySelectorAll("#best_films_cat");
-let thrillerCat = document.querySelectorAll('#thriller_cat');
-let fantasyCat = document.querySelectorAll('#Fantasy_cat');
-let dramaCat = document.querySelectorAll('#Drama_cat') 
+let bestFilm = document.querySelector('#best-movie-cover');
+let bestFilms = document.querySelectorAll(".best-movies-cat #movie-cover");
+let thrillerCat = document.querySelectorAll('.thriller #movie-cover');
+let fantasyCat = document.querySelectorAll('.fantasy #movie-cover');
+let dramaCat = document.querySelectorAll('.drama #movie-cover') 
 
 
 const getBestFilmImg = async function(uri, id){
