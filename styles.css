@@ -68,7 +68,7 @@ span#titre_du_site{
     overflow: hidden;
 }
 
-#movie-cover {  
+.movie-cover {  
     background-color: grey;
     border: solid 1px black;
     margin-left: 3px;
@@ -76,16 +76,16 @@ span#titre_du_site{
     display: none;
 }
 
-#box .active{
+.box .active{
     display: block;
 }
 
-#movie-cover:nth-child(1) {
+.movie-cover:nth-child(1) {
     margin-left: 5px;
 }
 
 
-#movie-cover:hover{
+.movie-cover:hover{
     background-color: black;
     height: 100%;
     width: 220px;
