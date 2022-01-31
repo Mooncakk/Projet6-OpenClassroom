@@ -24,7 +24,6 @@ const getBestFilmImg = async function(uri, id){
     id.src = img
 }
 
-
 const getCatImg = async function(uri_page1, uri_page2, id) {
     let response1 = await fetch(url+uri_page1);
     let response2 = await fetch(url+uri_page2);
@@ -48,25 +47,25 @@ getCatImg(uriDramaCat, uriDramaCat2, dramaCat)
 
 
 const nbMovieCover = 7;
-const previous = dcocument.querySelectorAll(".btn-nav-left");
-const next = dcocument.querySelectorAll(".btn-nav-right");
+const previous = document.querySelector(".btn-nav-left");
+const next = document.querySelector(".btn-nav-right");
 let count = 0;
 
-const nextMovieCover = function(items){
+function test (items=bestFilms){
     items[count].classList.remove('active');
 
-    if(count < nbMovieCover){
+    if(count < nbMovieCover - 1 ){
         count++;
-    }else {
+    } else {
         count = 0;
     }
     
     items[count].classList.add('active');
+    console.log(count);
 }
 
-previous.addEventListener('click', console.log('jolie click'))
-next.addEventListener('click', console.log('jolie click'))
-
+//previous.addEventListener('click', console.log('jolie click'))
+next.addEventListener('click', test)
 
 
 /*
