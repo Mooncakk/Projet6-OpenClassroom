@@ -1,3 +1,14 @@
+@font-face {
+    font-family: bebas;
+    src: url(Fonts/BebasNeuePro-Regular.ttf);
+}
+
+@font-face {
+    font-family: bebasbold;
+    src: url(Fonts/BebasNeuePro-Bold.ttf)
+}
+
+
 body {
     background-color: black;
 }
@@ -14,18 +25,21 @@ nav {
 span#titre_du_site{
     font-size: 30px;
     margin-right: 50px;
+    font-size: 30pt;
     color: ivory;
+    font-family: bebasbold;
 }
 .acceuil, .cat {
     font-weight: bold;
     margin-left: 20px;
-    font-size: 15pt;
+    font-size: 18pt;
     color: ivory;
+    font-family: bebas;
 }
 .acceuil:hover, .cat:hover {
     font-weight: bold;
     margin-left: 20px;
-    font-size: 18pt;
+    font-size: 22pt;
 }
 
 .best-movie {
