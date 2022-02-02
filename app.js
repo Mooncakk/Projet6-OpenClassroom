@@ -50,7 +50,7 @@ getCatImg(uriDramaCat, uriDramaCat2, dramaCat)
 const nbMovieCover = 7;
 const previous = document.querySelectorAll(".btn-nav-left");
 const next = document.querySelectorAll(".btn-nav-right");
-let count = 0;
+var count = 0;
 let a = 3;
 
 const removeActive = function (){
@@ -60,45 +60,52 @@ const removeActive = function (){
     }
 
 
-next[0].addEventListener('click', function () {
-    if(a>6){
-        a = 3;
-        count = 0;
-    };
-    a++;
-    removeActive();
-    bestMoviesCat[a].classList.add('active');
-    console.log(a)
-    
-})
-
 
 const nextSlide = function (items){
-    items[count].classList.remove('active');
 
     if(count < nbMovieCover - 1 ){
+        items[count].classList.remove('active');
         count++;
         a++
     } else {
+        items[4].classList.remove('active');
+        items[5].classList.remove('active');
+        items[a].classList.remove('active');
+
         count = 0;
+        a = 3;
+        items[0].classList.add('active');
+        items[1].classList.add('active');
+        items[2].classList.add('active');
     }
     
     items[a].classList.add('active');
     console.log(count, a);
 }
 
+b = 3
 //previous.addEventListener('click', console.log('jolie click'))
-/*next[0].addEventListener('click', function (){
+next[0].addEventListener('click', function (){
+  
+    if(b < nbMovieCover - 1){
+        bestMoviesCat[count].classList.remove('active');
 
-    if(a > 6 ){
+        count++;
+        b++;   
+    } else{
+        bestMoviesCat[4].classList.remove('active');
+        bestMoviesCat[5].classList.remove('active');
+        bestMoviesCat[b].classList.remove('active');
         count = 0;
-        a = 3;
-    }
+        b=3;
+        bestMoviesCat[0].classList.add('active');
+        bestMoviesCat[1].classList.add('active');
+        bestMoviesCat[2].classList.add('active');
         
-    bestMoviesCat[count].classList.remove('active');
-    count++
-    bestMoviesCat[i].classList.add('active');
-    console.log(count, a);
+    }
+    
+    bestMoviesCat[b].classList.add('active');
+    console.log(count, b);
 
 })
 
