@@ -53,62 +53,63 @@ const next = document.querySelectorAll(".btn-nav-right");
 var count = 0;
 let a = 3;
 
-const removeActive = function (){
-    bestMoviesCat[count].classList.remove('active'); 
-    count++
-    console.log(count)       
+const removeActive = function (tag, step){
+    tag[step].classList.remove('active'); 
     }
 
+const addActive = (tag, step) => {
+    tag[step].classList.add('active');
+}
 
-
-const nextSlide = function (items){
+const nextSlide = function (tag, step){
 
     if(count < nbMovieCover - 1 ){
-        items[count].classList.remove('active');
+        tag[step].classList.remove('active'); 
         count++;
         a++
     } else {
-        items[4].classList.remove('active');
-        items[5].classList.remove('active');
-        items[a].classList.remove('active');
+        tag[4].classList.remove('active');
+        tag[5].classList.remove('active');
+        tag[a].classList.remove('active');
 
-        count = 0;
-        a = 3;
-        items[0].classList.add('active');
-        items[1].classList.add('active');
-        items[2].classList.add('active');
+        count;
+        a;
+        tag[0].classList.add('active');
+        tag[1].classList.add('active');
+        tag[2].classList.add('active');
     }
     
-    items[a].classList.add('active');
+    tag[a].classList.add('active');
     console.log(count, a);
 }
 
 b = 3
 //previous.addEventListener('click', console.log('jolie click'))
-next[0].addEventListener('click', function (){
+/*next[0].addEventListener('click', function (){
   
     if(b < nbMovieCover - 1){
-        bestMoviesCat[count].classList.remove('active');
-
+        removeActive(bestMoviesCat, count);
         count++;
         b++;   
     } else{
-        bestMoviesCat[4].classList.remove('active');
-        bestMoviesCat[5].classList.remove('active');
-        bestMoviesCat[b].classList.remove('active');
+        removeActive(bestMoviesCat, 4);
+        removeActive(bestMoviesCat, 5);
+        removeActive(bestMoviesCat, b);
         count = 0;
         b=3;
-        bestMoviesCat[0].classList.add('active');
-        bestMoviesCat[1].classList.add('active');
-        bestMoviesCat[2].classList.add('active');
-        
+        addActive(bestMoviesCat,0)
+        addActive(bestMoviesCat, 1)
+        addActive(bestMoviesCat, 2)    
     }
     
-    bestMoviesCat[b].classList.add('active');
+    addActive(bestMoviesCat, b);
     console.log(count, b);
 
-})
+})*/
 
+let fc = nextSlide(bestMoviesCat, b)
+
+next[0].addEventListener('click', fc)
 
 //next.onclick = () => {console.log('click')}
 
