@@ -139,7 +139,7 @@ const getModalContent = async ()=>{
     modalMovieCover.src = data['results']['0']['image_url']
     moviesDirectors.innerText = 'Directors : ' + data['results']['0']['directors']
     moviesActors.innerText = 'Actors : ' + data['results']['0']['actors']
-    movieResume.innerText = data['results']['0']['actors']
+    movieResume.innerText = 'Synopsis : '+ data['results']['0']['actors']
 
 
     console.log(title)
