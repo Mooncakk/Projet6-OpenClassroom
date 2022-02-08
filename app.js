@@ -10,15 +10,14 @@ const uriDramaCat = "?genre=drama"
 const uriDramaCat2 = "?genre=drama&page=2"
 
 
-let bestMovie = document.querySelector('#best-movie-cover');
+let bestMovie = document.querySelector('.best-movie .movie-cover');
 let bestMoviesCat = document.querySelectorAll('.best-movies-cat .movie-cover');
 let thrillerCat = document.querySelectorAll('.thriller .movie-cover');
 let fantasyCat = document.querySelectorAll('.fantasy .movie-cover');
 let dramaCat = document.querySelectorAll('.drama .movie-cover') 
 
-let test = document.querySelectorAll('#box')
 
-const getBestFilmImg = async function(uri, id){
+const getBestMovieImg = async function(uri, id){
     let response = await fetch(url+uri);
     let data = await response.json();
     img = data['results']['0']['image_url']
@@ -40,18 +39,18 @@ const getCatImg = async function(uri_page1, uri_page2, class_) {
         }
 }
 
-getBestFilmImg(uriBestMovie, bestMovie)
+getBestMovieImg(uriBestMovie, bestMovie)
 getCatImg(uriBestMoviesCat, uriBestMoviesCat2, bestMoviesCat)
 getCatImg(uriThrillerCat, uriThrillerCat2, thrillerCat)
 getCatImg(uriFantasyCat, uriFantasyCat2, fantasyCat)
 getCatImg(uriDramaCat, uriDramaCat2, dramaCat)
 
 
-const nbMovieCover = 7;
 const previous = document.querySelectorAll(".btn-nav-left");
 const next = document.querySelectorAll(".btn-nav-right");
-var count = 0;
-let a = 3;
+const nbMovieCover = 7;
+let count = 0;
+let count2 = 3
 
 const removeActive = function (tag, step){
     tag[step].classList.remove('active'); 
@@ -61,98 +60,99 @@ const addActive = (tag, step) => {
     tag[step].classList.add('active');
 }
 
-const nextSlide = function (tag, step){
-
-    if(count < nbMovieCover - 1 ){
-        tag[step].classList.remove('active'); 
-        count++;
-        a++
-    } else {
-        tag[4].classList.remove('active');
-        tag[5].classList.remove('active');
-        tag[a].classList.remove('active');
-
-        count;
-        a;
-        tag[0].classList.add('active');
-        tag[1].classList.add('active');
-        tag[2].classList.add('active');
-    }
+function previousSlide(index, tag, step, step2) {
     
-    tag[a].classList.add('active');
-    console.log(count, a);
-}
-
-b = 3
-//previous.addEventListener('click', console.log('jolie click'))
-/*next[0].addEventListener('click', function (){
+    previous[index].onclick = ()=> {
   
-    if(b < nbMovieCover - 1){
-        removeActive(bestMoviesCat, count);
-        count++;
-        b++;   
-    } else{
-        removeActive(bestMoviesCat, 4);
-        removeActive(bestMoviesCat, 5);
-        removeActive(bestMoviesCat, b);
-        count = 0;
-        b=3;
-        addActive(bestMoviesCat,0)
-        addActive(bestMoviesCat, 1)
-        addActive(bestMoviesCat, 2)    
+        if(step > 0){
+            removeActive(tag, step2);
+            step--;
+            step2--;   
+        } else{
+            removeActive(tag, 2);
+            removeActive(tag, 1);
+            removeActive(tag, step);
+            step = 3;
+            step2=6;
+            addActive(tag, 6)    
+            addActive(tag, 5)
+            addActive(tag, 4)
+        }
+        addActive(tag, step);        
     }
-    
-    addActive(bestMoviesCat, b);
-    console.log(count, b);
-
-})*/
-
-let fc = nextSlide(bestMoviesCat, b)
-
-next[0].addEventListener('click', fc)
-
-//next.onclick = () => {console.log('click')}
-
-
-
-/*
-const bestFilm = document.getElementById("best_film")
-const bestFilms = document.querySelectorAll("#best_films_cat")
-
-fetch('http://localhost:8000/api/v1/titles/?imdb_score_min=9.4')
-
-.then(res => res.json())
-.then(function(data){
-    for(i=0; i < 7; i++){
-        bestFilms[i].src = data["results"][i]["image_url"]
-        console.log(bestFilms.src)
-        
-    }
-
-})
-
-
-var bestFilms = document.getElementById("best_films")
-
-fetch("http://localhost:8000/api/v1/titles/?imdb_score_min=9.4")
-.then(res => res.json())
-.then((for(var i = 1; i < 8; i++){
-    data => bestFilms.src = data["results"][i]["image_url"]
 }
 
 
+function nextSlide(index, tag, step, step2){
 
-var bestFilms = document.querySelector('#best_films_cat')
+    next[index].onclick = ()=> {
 
-fetch("http://localhost:8000/api/v1/titles/?imdb_score_min=9.4")
-
-.then(function(res) {
-    if (res.ok) {
-      return res.json();
+        if(step2 < nbMovieCover - 1){
+            removeActive(tag, step);
+            step++;
+            step2++;   
+        } else{
+            removeActive(tag, 4);
+            removeActive(tag, 5);
+            removeActive(tag, step2);
+            step = 0;
+            step2=3;
+            addActive(tag,0)
+            addActive(tag, 1)
+            addActive(tag, 2)    
+        }
+        addActive(tag, step2);
     }
-  })
-.then(function(value) {
-    console.log(value["results"]["0"]["image_url"]);
-    value => bestFilms.src = value["results"]["0"]["image_url"];
+}
 
-  });*/
+previousSlide(0, bestMoviesCat, count, count2);
+nextSlide(0, bestMoviesCat, count, count2)
+
+previousSlide(1, thrillerCat, count, count2)
+nextSlide(1, thrillerCat, count, count2)
+
+previousSlide(2, fantasyCat, count, count2)
+nextSlide(2, fantasyCat, count, count2)
+
+
+previousSlide(3, dramaCat, count, count2)
+nextSlide(3, dramaCat, count, count2)
+
+//Modal
+
+let movieCov = document.querySelectorAll('.movie-cover')
+const modal = document.querySelector('.modal')
+let modalTitle = document.querySelector('#modal-title')
+let closeModal = document.querySelector('#close-cross')
+let MovieResume = document.querySelector('#synopsis')
+let modalMovieCover = document.querySelector('#modal-movie-cover')
+let moviesDirectors = document.querySelector('#directors')
+let moviesActors = document.querySelector('#actors')
+let movieResume = document.querySelector('#synopsis')
+
+
+const getModalContent = async ()=>{
+    let response = await fetch(url+uriBestMovie)
+    data = await response.json()
+    title = data['results']['0']['title']
+    modalTitle.innerText = title
+    modalMovieCover.src = data['results']['0']['image_url']
+    moviesDirectors.innerText = 'Directors : ' + data['results']['0']['directors']
+    moviesActors.innerText = 'Actors : ' + data['results']['0']['actors']
+    movieResume.innerText = data['results']['0']['actors']
+
+
+    console.log(title)
+}
+
+for(img of movieCov){
+    img.addEventListener('click', ()=>{
+        modal.style.display = 'block';
+        getModalContent();
+        }
+    
+)};
+
+closeModal.onclick = ()=>{
+    modal.style.display = 'none';
+}

@@ -11,6 +11,7 @@
 
 body {
     background-color: black;
+    font-family: bebas;
 }
 
 nav {
@@ -34,7 +35,6 @@ span#titre_du_site{
     margin-left: 20px;
     font-size: 18pt;
     color: ivory;
-    font-family: bebas;
 }
 .acceuil:hover, .cat:hover {
     font-weight: bold;
@@ -49,25 +49,27 @@ span#titre_du_site{
     color: ivory;
     align-items: center;
     justify-content: center;
-
+    
 }
 
-#best-movie-cover{
+.best-movie .movie-cover{
     height: 400px;
+    cursor: pointer;
 }
 
 .btn-nav-left, .btn-nav-right {
-    background-color: rgba(24, 24, 24, 0.476);
+    background-color: rgba(24, 24, 24, 0.151);
     height: 260px;
     width: 40px;
     cursor: pointer;
-    border: 1px solid red;
+    border:rgba(24, 24, 24, 0.476);
 }
 
 
 #category-title {
     text-align: center;
     margin:10px 0 10px 0;
+    font-size: 20pt;
     color: ivory;
 }
 
@@ -82,11 +84,11 @@ span#titre_du_site{
     overflow: hidden;
 }
 
-.movie-cover {  
-    background-color: grey;
+.box .movie-cover {  
     border: solid 1px black;
     margin-left: 3px;
     height: 260px;
+    cursor: pointer;
     display: none;
 }
 
@@ -99,8 +101,89 @@ span#titre_du_site{
 }
 
 
-.movie-cover:hover{
+.box .movie-cover:hover{
     background-color: black;
     height: 100%;
     width: 220px;
+}
+
+
+/*Modal*/
+
+.modal{
+    background-color:rgba(0, 0, 0);
+    background-color:rgba(0, 0, 0, 0.445);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    font-family: bebas;
+}
+
+.modal-content{
+    background-color:black;
+    border: solid 3px #881111;
+    margin: 5% auto;
+    width: 5%;
+    min-width: 40%;
+    height: 80%;
+    border-radius: 3px;
+    padding:0;
+}
+
+#close-cross{
+    float: right;
+    cursor: pointer;
+}
+
+
+#modal-movie-cover{
+    margin-left: 20px;
+    float: left;
+}
+
+.aside-box{
+    border: solid 1px red;
+    width: 50%;
+    float: right;
+    padding: 0;
+}
+#modal-title{
+    color: white;
+    font-family: bebasbold;
+    margin-top: 0px;
+    text-align: center;
+}
+
+#directors{
+    color: ivory;
+}
+
+#actors {
+    color: ivory;
+}
+
+.para {
+    color: ivory;
+    margin: 20px;
+    border: 1px solid white;
+    bottom: 0px;
+    
+}
+
+#synopsis{
+    border: 1px solid white;
+    color: silver;
+    
+}
+#box1 {
+    border: 1px solid rgb(147, 44, 206);
+    height:50%;
+    margin-top: 30px;
+    padding: 10px;
+
 }

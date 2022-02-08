@@ -10,15 +10,43 @@
     <script src="app.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <span id="titre_du_site"><strong>J</strong>ust<strong>S</strong>tream<strong>I</strong>t</span> 
-            <a class="acceuil">Acceuil</a>
-            <a class="cat">Catégories</a>
-        </nav>
-    </header>
+    <div>
+        <header>
+            <nav>
+                <span id="titre_du_site"><strong>J</strong>ust<strong>S</strong>tream<strong>I</strong>t</span> 
+                <a class="acceuil">Acceuil</a>
+                <a class="cat">Catégories</a>
+            </nav>
+        </header>
+    </div>
+    <div class="modal">modal
+        <div class="modal-content">
+            <span class="close">
+                <img id="close-cross" src="./Images/close(1).png" alt="">
+            </span>
+            <div id="box1">
+                <img src="" alt="movie cover" id="modal-movie-cover">
+
+                <aside class="aside-box">
+                    <header>
+                        <h1 id="modal-title"></h1>
+                    </header>
+                    <div>
+                        <div id="directors">Directors</div>
+                        <div id="actors">Actors</div>
+                    </div>
+                </aside>
+            </div>
+            <p id="synopsis">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate odit architecto labore quasi repellat nobis fugit assumenda totam consectetur. Sequi ex voluptas fuga a. Reiciendis facilis quod ex corrupti ut.</p>
+            <footer id="movie-info">
+                <a >Category</a>
+                <a >Years</a>
+                <a >Note</a>
+            </footer>
+        </div>
+    </div>
     <section class="best-movie">
-            <img src="" alt="Best movie cover" id="best-movie-cover">
+        <img src="" alt="Best movie cover" class="movie-cover">
     </section>
     <section class="best-movies-cat">
         <header>
