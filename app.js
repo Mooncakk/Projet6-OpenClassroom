@@ -123,13 +123,22 @@ nextSlide(3, dramaCat, count, count2)
 let movieCov = document.querySelectorAll('.movie-cover')
 const modal = document.querySelector('.modal')
 let modalTitle = document.querySelector('#modal-title')
+let movieImdbScore = document.querySelector('#imdb-score')
+
 let closeModal = document.querySelector('#close-cross')
 let MovieResume = document.querySelector('#synopsis')
 let modalMovieCover = document.querySelector('#modal-movie-cover')
 let moviesDirectors = document.querySelector('#directors')
 let moviesActors = document.querySelector('#actors')
-let movieResume = document.querySelector('#synopsis')
+let movieSynopsis = document.querySelector('#synopsis')
+let moviePublicationYear = document.querySelector('#movie-year')
 
+
+const getMovieSynopsis = async(id)=> {
+    let response = await fetch(url+id);
+    let data = await response.json();
+    return data['long_description']
+}
 
 const getModalContent = async ()=>{
     let response = await fetch(url+uriBestMovie)
@@ -139,10 +148,13 @@ const getModalContent = async ()=>{
     modalMovieCover.src = data['results']['0']['image_url']
     moviesDirectors.innerText = 'Directors : ' + data['results']['0']['directors']
     moviesActors.innerText = 'Actors : ' + data['results']['0']['actors']
-    movieResume.innerText = 'Synopsis : '+ data['results']['0']['actors']
+    movieImdbScore.innerText = data['results']['0']['imdb_score'];
+    let movieId = data['results']['0']['id'];
+    synopsis = await getMovieSynopsis(movieId)
+    movieSynopsis.innerText = 'Synopsis : '+ synopsis
 
 
-    console.log(title)
+    console.log(title, movieId, getMovieSynopsis(movieId))
 }
 
 for(img of movieCov){

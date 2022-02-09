@@ -161,7 +161,12 @@ span#titre_du_site{
 
 }
 
+.abo{
+    border: 1px solid greenyellow;
+    
+}
 .aside-box{
+    color: ivory;
     width: 50%;
     float: right;
     position: relative;
@@ -185,6 +190,7 @@ span#titre_du_site{
     margin-right: 15px;
     margin-left: 15px;
     height: 170px;
+    font-size: 14pt;
 
 }
 
@@ -192,4 +198,11 @@ footer {
     color: white;
     margin-left: 15px;
 
+}
+
+footer span{
+    margin-right: 20px;
+    color: ivory;
+    width: 30px;
+    border: 1px solid red;
 }
