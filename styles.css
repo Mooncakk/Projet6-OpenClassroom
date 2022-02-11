@@ -133,6 +133,15 @@ span#titre_du_site{
     border-radius: 3px;
     padding:0;
 }
+
+#movie-year{
+    color: ivory;
+    background-color:yellow;
+    width: 35px;
+    height: 35px;
+
+}
+
 #box1 {
     border: 1px solid rgb(147, 44, 206);
     height:50%;
@@ -141,11 +150,11 @@ span#titre_du_site{
     
 }
 
-#modal-title{
+#modal-title, #imdb-score {
     color: white;
     font-family: bebasbold;
     margin-top: 0px;
-    text-align: center;
+    display: inline;
 }
 
 #close-cross{
@@ -161,15 +170,10 @@ span#titre_du_site{
 
 }
 
-.abo{
-    border: 1px solid greenyellow;
-    
-}
 .aside-box{
     color: ivory;
     width: 50%;
     float: right;
-    position: relative;
     border: 1px solid red;
 
 }

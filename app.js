@@ -134,10 +134,10 @@ let movieSynopsis = document.querySelector('#synopsis')
 let moviePublicationYear = document.querySelector('#movie-year')
 
 
-const getMovieSynopsis = async(id)=> {
+const getMovieData = async(id)=> {
     let response = await fetch(url+id);
     let data = await response.json();
-    return data['long_description']
+    return data
 }
 
 const getModalContent = async ()=>{
@@ -150,11 +150,11 @@ const getModalContent = async ()=>{
     moviesActors.innerText = 'Actors : ' + data['results']['0']['actors']
     movieImdbScore.innerText = data['results']['0']['imdb_score'];
     let movieId = data['results']['0']['id'];
-    synopsis = await getMovieSynopsis(movieId)
-    movieSynopsis.innerText = 'Synopsis : '+ synopsis
+    let movieData = await getMovieData(movieId);
+    movieSynopsis.innerText = 'Synopsis : ' + movieData.long_description;
+    moviePublicationYear.innertext = 'Date : ' + movieData.date_published;
 
-
-    console.log(title, movieId, getMovieSynopsis(movieId))
+    console.log(title, movieId, moviePublicationYear)
 }
 
 for(img of movieCov){
