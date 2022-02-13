@@ -30,12 +30,19 @@ const getCatImg = async function(uri_page1, uri_page2, class_) {
     let data1 = await response1.json();
     let data2 = await response2.json();
     for( i=0; i<5; i++){
-        class_[i].src = data1['results'][i]['image_url']
+        class_[i].src = data1['results'][i]['image_url'];
+        id_ = data1['results'][i]['id'];
+        movieCov.id = id_;
+        console.log(movieCov.id);
         }
     let index = 0;
     for( i=5; i<7; i++){
-        class_[i].src = data2['results'][index]['image_url']
-        index++
+        class_[i].src = data2['results'][index]['image_url'];
+        id_2 = data2['results'][index]['id'];
+        movieCov.id = id_2;
+        console.log(movieCov.id);
+        index++;
+
         }
 }
 
@@ -121,7 +128,7 @@ nextSlide(3, dramaCat, count, count2)
 //Modal
 
 let movieCov = document.querySelectorAll('.movie-cover')
-const modal = document.querySelector('.modal')
+let modal = document.querySelector('.modal')
 let modalTitle = document.querySelector('#modal-title')
 let movieImdbScore = document.querySelector('#imdb-score')
 
@@ -132,7 +139,11 @@ let moviesDirectors = document.querySelector('#directors')
 let moviesActors = document.querySelector('#actors')
 let movieSynopsis = document.querySelector('#synopsis')
 let moviePublicationYear = document.querySelector('#movie-year')
-
+let movieCategory = document.querySelector('#movie-category')
+let movieDuration = document.querySelector('#duration')
+let movieCountry = document.querySelector('#country')
+let movieRated = document.querySelector('#rated')
+let movieBoxOfficeResult = document.querySelector('#box_office_result')
 
 const getMovieData = async(id)=> {
     let response = await fetch(url+id);
@@ -142,19 +153,24 @@ const getMovieData = async(id)=> {
 
 const getModalContent = async ()=>{
     let response = await fetch(url+uriBestMovie)
-    data = await response.json()
-    title = data['results']['0']['title']
-    modalTitle.innerText = title
-    modalMovieCover.src = data['results']['0']['image_url']
-    moviesDirectors.innerText = 'Directors : ' + data['results']['0']['directors']
-    moviesActors.innerText = 'Actors : ' + data['results']['0']['actors']
-    movieImdbScore.innerText = data['results']['0']['imdb_score'];
+    data = await response.json();
     let movieId = data['results']['0']['id'];
     let movieData = await getMovieData(movieId);
+    modalTitle.innerText = movieData.title;
+    modalMovieCover.src = movieData.image_url;
+    moviesDirectors.innerText = 'Directors : ' + movieData.directors;
+    moviesActors.innerText = 'Actors : ' + movieData.actors;
+    movieImdbScore.innerText = movieData.imdb_score;
     movieSynopsis.innerText = 'Synopsis : ' + movieData.long_description;
-    moviePublicationYear.innertext = 'Date : ' + movieData.date_published;
+    moviePublicationYear.innerText = 'Date : ' + movieData.date_published;
+    movieCategory.innerText = 'Catégorie : ' + movieData.genres;
+    movieDuration.innerText = movieData.duration +'min';
+    movieCountry.innerText = movieData.countries;
+    movieRated.innerText = movieData.rated;
+    movieBoxOfficeResult.innerText = movieData.worldwide_gross_income;
 
-    console.log(title, movieId, moviePublicationYear)
+
+    console.log(movieId, moviePublicationYear)
 }
 
 for(img of movieCov){
@@ -162,9 +178,13 @@ for(img of movieCov){
         modal.style.display = 'block';
         getModalContent();
         }
-    
 )};
+
 
 closeModal.onclick = ()=>{
     modal.style.display = 'none';
 }
+
+toto = document.querySelectorAll('.best-movie-cat .box')
+
+//movieCov[11].id = 'test'

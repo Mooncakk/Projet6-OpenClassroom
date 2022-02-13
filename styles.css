@@ -134,12 +134,9 @@ span#titre_du_site{
     padding:0;
 }
 
-#movie-year{
-    color: ivory;
-    background-color:yellow;
-    width: 35px;
-    height: 35px;
-
+#close-cross{
+    cursor: pointer;
+    float: right;
 }
 
 #box1 {
@@ -150,24 +147,9 @@ span#titre_du_site{
     
 }
 
-#modal-title, #imdb-score {
-    color: white;
-    font-family: bebasbold;
-    margin-top: 0px;
-    display: inline;
-}
-
-#close-cross{
-    cursor: pointer;
-    float: right;
-}
-
-
 #modal-movie-cover{
     float: left;
     border: 1px solid red;
-
-
 }
 
 .aside-box{
@@ -178,8 +160,26 @@ span#titre_du_site{
 
 }
 
+
+#modal-title, #imdb-score {
+    color: white;
+    font-family: bebasbold;
+    margin-top: 0px;
+    margin-right: 5px;
+    display: inline;
+}
+
+
+
+
+#movie-year, #movie-category {
+    display: inline;
+    margin-right: 5px;
+}
+
 #directors{
     color: ivory;
+    margin-top: 5px;
 }
 
 #actors {
@@ -198,15 +198,12 @@ span#titre_du_site{
 
 }
 
-footer {
+footer p{
     color: white;
     margin-left: 15px;
-
-}
-
-footer span{
-    margin-right: 20px;
-    color: ivory;
-    width: 30px;
     border: 1px solid red;
+    display: inline;
 }
+
+
+
