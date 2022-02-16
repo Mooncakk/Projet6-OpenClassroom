@@ -185,6 +185,5 @@ closeModal.onclick = ()=>{
     modal.style.display = 'none';
 }
 
-toto = document.querySelectorAll('.best-movie-cat .box')
 
 //movieCov[11].id = 'test'
