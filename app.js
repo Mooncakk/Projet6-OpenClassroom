@@ -20,8 +20,11 @@ let dramaCat = document.querySelectorAll('.drama .movie-cover')
 const getBestMovieImg = async function(uri, id){
     let response = await fetch(url+uri);
     let data = await response.json();
-    img = data['results']['0']['image_url']
-    id.src = img
+    img = data['results']['0']['image_url'];
+    let movieId = data['results']['0']['id'];
+    id.src = img;
+    id.id = movieId;
+
 }
 
 function setId(element, newId) {
@@ -49,7 +52,7 @@ const getCatImg = async function(uri_page1, uri_page2, class_) {
         index++;
         }
     //console.log(movieIdList)
-    let num = 0;
+    let num = 1;
     for(id_ of movieIdList){
         movieCov[num].id = id_;
         console.log(id_)
@@ -60,7 +63,7 @@ const getCatImg = async function(uri_page1, uri_page2, class_) {
     
 }
 
-//getBestMovieImg(uriBestMovie, bestMovie)
+getBestMovieImg(uriBestMovie, bestMovie)
 getCatImg(uriBestMoviesCat, uriBestMoviesCat2, bestMoviesCat)
 //getCatImg(uriThrillerCat, uriThrillerCat2, thrillerCat)
 //getCatImg(uriFantasyCat, uriFantasyCat2, fantasyCat)
@@ -184,15 +187,18 @@ const getModalContent = async ()=>{
     movieBoxOfficeResult.innerText = movieData.worldwide_gross_income;
 
 
-    console.log(movieId, moviePublicationYear)
+    console.log(movieId)
 }
+
 
 for(img of movieCov){
     img.addEventListener('click', ()=>{
         modal.style.display = 'block';
         getModalContent();
-        }
-)};
+
+        console.log(movieCov.id);
+    })
+};
 
 
 closeModal.onclick = ()=>{
