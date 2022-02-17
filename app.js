@@ -24,33 +24,47 @@ const getBestMovieImg = async function(uri, id){
     id.src = img
 }
 
+function setId(element, newId) {
+    element.id = newId;
+   // console.log(element.id);
+}
+
 const getCatImg = async function(uri_page1, uri_page2, class_) {
     let response1 = await fetch(url+uri_page1);
     let response2 = await fetch(url+uri_page2);
     let data1 = await response1.json();
     let data2 = await response2.json();
+    let movieIdList = [];
     for( i=0; i<5; i++){
         class_[i].src = data1['results'][i]['image_url'];
-        id_ = data1['results'][i]['id'];
-        movieCov.id = id_;
-        console.log(movieCov.id);
+        let movieId = data1['results'][i]['id'];
+        movieIdList.push(movieId);
         }
+   
     let index = 0;
     for( i=5; i<7; i++){
         class_[i].src = data2['results'][index]['image_url'];
-        id_2 = data2['results'][index]['id'];
-        movieCov.id = id_2;
-        console.log(movieCov.id);
+        let movieId2 = data2['results'][index]['id'];
+        movieIdList.push(movieId2);
         index++;
-
         }
+    //console.log(movieIdList)
+    let num = 0;
+    for(id_ of movieIdList){
+        movieCov[num].id = id_;
+        console.log(id_)
+        num++;
+    }
+    console.log(movieIdList);
+    
+    
 }
 
-getBestMovieImg(uriBestMovie, bestMovie)
+//getBestMovieImg(uriBestMovie, bestMovie)
 getCatImg(uriBestMoviesCat, uriBestMoviesCat2, bestMoviesCat)
-getCatImg(uriThrillerCat, uriThrillerCat2, thrillerCat)
-getCatImg(uriFantasyCat, uriFantasyCat2, fantasyCat)
-getCatImg(uriDramaCat, uriDramaCat2, dramaCat)
+//getCatImg(uriThrillerCat, uriThrillerCat2, thrillerCat)
+//getCatImg(uriFantasyCat, uriFantasyCat2, fantasyCat)
+//getCatImg(uriDramaCat, uriDramaCat2, dramaCat);
 
 
 const previous = document.querySelectorAll(".btn-nav-left");
