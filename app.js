@@ -17,16 +17,17 @@ let fantasyCat = document.querySelectorAll('.fantasy .movie-cover');
 let dramaCat = document.querySelectorAll('.drama .movie-cover') 
 
 
-const getBestMovieImg = async function(uri, id){
+
+const getBestMovieImg = async function(uri, class_){
     let response = await fetch(url+uri);
     let data = await response.json();
-    img = data['results']['0']['image_url']
-    id.src = img
-}
-
-function setId(element, newId) {
-    element.id = newId;
-   // console.log(element.id);
+    let img = data['results']['0']['image_url'];
+    let title = data['results']['0']['title'];
+    let id_ = data['results']['0']['id'];
+    let bestMovieTitle = document.querySelector('.best-movie-title')
+    class_.src = img;
+    class_.id = id_;
+    bestMovieTitle.innerText = title
 }
 
 const getCatImg = async function(uri_page1, uri_page2, class_) {
@@ -34,12 +35,13 @@ const getCatImg = async function(uri_page1, uri_page2, class_) {
     let response2 = await fetch(url+uri_page2);
     let data1 = await response1.json();
     let data2 = await response2.json();
-    let movieIdList = [];
+    var movieIdList = [];
+
     for( i=0; i<5; i++){
         class_[i].src = data1['results'][i]['image_url'];
         let movieId = data1['results'][i]['id'];
         movieIdList.push(movieId);
-        }
+    }
    
     let index = 0;
     for( i=5; i<7; i++){
@@ -47,24 +49,22 @@ const getCatImg = async function(uri_page1, uri_page2, class_) {
         let movieId2 = data2['results'][index]['id'];
         movieIdList.push(movieId2);
         index++;
-        }
-    //console.log(movieIdList)
-    let num = 0;
-    for(id_ of movieIdList){
-        movieCov[num].id = id_;
-        console.log(id_)
-        num++;
     }
-    console.log(movieIdList);
-    
+
+    let v = 0;
+    for(var movieId of movieIdList){
+        class_[v].id = movieId;
+        v++;
+    }
     
 }
 
-//getBestMovieImg(uriBestMovie, bestMovie)
+
+getBestMovieImg(uriBestMovie, bestMovie)
 getCatImg(uriBestMoviesCat, uriBestMoviesCat2, bestMoviesCat)
-//getCatImg(uriThrillerCat, uriThrillerCat2, thrillerCat)
-//getCatImg(uriFantasyCat, uriFantasyCat2, fantasyCat)
-//getCatImg(uriDramaCat, uriDramaCat2, dramaCat);
+getCatImg(uriThrillerCat, uriThrillerCat2, thrillerCat)
+getCatImg(uriFantasyCat, uriFantasyCat2, fantasyCat)
+getCatImg(uriDramaCat, uriDramaCat2, dramaCat);
 
 
 const previous = document.querySelectorAll(".btn-nav-left");
@@ -141,7 +141,7 @@ nextSlide(3, dramaCat, count, count2)
 
 //Modal
 
-let movieCov = document.querySelectorAll('.movie-cover')
+var movieCov = document.querySelectorAll('.movie-cover')
 let modal = document.querySelector('.modal')
 let modalTitle = document.querySelector('#modal-title')
 let movieImdbScore = document.querySelector('#imdb-score')
@@ -159,17 +159,10 @@ let movieCountry = document.querySelector('#country')
 let movieRated = document.querySelector('#rated')
 let movieBoxOfficeResult = document.querySelector('#box_office_result')
 
-const getMovieData = async(id)=> {
-    let response = await fetch(url+id);
-    let data = await response.json();
-    return data
-}
 
-const getModalContent = async ()=>{
-    let response = await fetch(url+uriBestMovie)
-    data = await response.json();
-    let movieId = data['results']['0']['id'];
-    let movieData = await getMovieData(movieId);
+const getModalContent = async (id)=>{
+    let response = await fetch(url+id)
+    let movieData = await response.json();
     modalTitle.innerText = movieData.title;
     modalMovieCover.src = movieData.image_url;
     moviesDirectors.innerText = 'Directors : ' + movieData.directors;
@@ -183,16 +176,15 @@ const getModalContent = async ()=>{
     movieRated.innerText = movieData.rated;
     movieBoxOfficeResult.innerText = movieData.worldwide_gross_income;
 
-
-    console.log(movieId, moviePublicationYear)
 }
 
-for(img of movieCov){
-    img.addEventListener('click', ()=>{
+for(let movie of movieCov){
+    
+    movie.onclick = ()=> {
+        getModalContent(movie.id)
         modal.style.display = 'block';
-        getModalContent();
-        }
-)};
+    }
+}
 
 
 closeModal.onclick = ()=>{
@@ -200,4 +192,3 @@ closeModal.onclick = ()=>{
 }
 
 
-//movieCov[11].id = 'test'

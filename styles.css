@@ -40,6 +40,7 @@ span#titre_du_site{
     font-weight: bold;
     margin-left: 20px;
     font-size: 22pt;
+    cursor : pointer;
 }
 
 .best-movie {
@@ -50,6 +51,21 @@ span#titre_du_site{
     align-items: center;
     justify-content: center;
     
+}
+.play-movie-button {
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.226);
+    border-radius: 4px;
+    width: 160px;
+    font-size: 18pt;
+    font-family: bebasbold;
+    color: ivory;
+    margin-right: 20px;
+}
+
+#play-movie-text{
+    margin: auto;
+    vertical-align: 50%;
 }
 
 .best-movie .movie-cover{
@@ -126,7 +142,7 @@ span#titre_du_site{
 
 .modal-content{
     background-color:black;
-    border: solid 3px #881111;
+    border: groove 3px #72010152;
     margin: 5% auto;
     width: 420px;
     height: 550px;
@@ -140,7 +156,6 @@ span#titre_du_site{
 }
 
 #box1 {
-    border: 1px solid rgb(147, 44, 206);
     height:50%;
     margin-top: 20px;
     padding: 10px;
@@ -149,14 +164,12 @@ span#titre_du_site{
 
 #modal-movie-cover{
     float: left;
-    border: 1px solid red;
 }
 
 .aside-box{
     color: ivory;
     width: 50%;
     float: right;
-    border: 1px solid red;
 
 }
 
@@ -179,29 +192,31 @@ span#titre_du_site{
 
 #directors{
     color: ivory;
-    margin-top: 5px;
+    
 }
 
 #actors {
     color: ivory;
+    overflow: auto;
 }
 
 
 
 #synopsis{
-    border: 1px solid white;
+    border: 2px groove rgba(59, 58, 58, 0.815);
     color: ivory;
     margin-right: 15px;
     margin-left: 15px;
     height: 170px;
     font-size: 14pt;
+    overflow: scroll;
+    padding: 5px;
 
 }
 
 footer p{
     color: white;
     margin-left: 15px;
-    border: 1px solid red;
     display: inline;
 }
 
