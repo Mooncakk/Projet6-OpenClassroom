@@ -17,7 +17,6 @@ let fantasyCat = document.querySelectorAll('.fantasy .movie-cover');
 let dramaCat = document.querySelectorAll('.drama .movie-cover') 
 
 
-
 const getBestMovieImg = async function(uri, class_){
     let response = await fetch(url+uri);
     let data = await response.json();
